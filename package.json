@@ -1,0 +1,23 @@
+{
+  "name": "boss-autosend-resume",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "debug": "set DEBUG=connector && npm start",
+    "proto": "protoc --js_out=import_style=commonjs,binary:. ./proto/chat.proto"
+  },
+  "keywords": [],
+  "author": "Nathan",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "debug": "^3.1.0",
+    "google-protobuf": "^3.5.0",
+    "websocket": "^1.0.26"
+  }
+}
