@@ -29,7 +29,7 @@ c.on('textmsg', ({ from, name, message }) => {
   if (!sended.has(from)) {
     c.sendGetBossInfo(from)
       .then(info => {
-        console.log('[sendGetBossInfo]', data.resmsg)
+        console.log('[sendGetBossInfo]', info.resmsg)
         c.sendMessage({ text: autosend, name: info.data.encryptBossId })
         c.sendResume(from).then(data => {
           console.log('[sendResume]', data.resmsg)
