@@ -24,8 +24,11 @@ c.on('connect', () => {
   console.log('[connector]', 'connect success')
 })
 
-c.on('textmsg', ({ from, name, message }) => {
-  console.log(`[message] name: ${name}, message: ${message}`)
+c.on('message', ({ type, templateid, from, name, message }) => {
+  console.log(`[message] type: ${type}, template: ${templateid}, name: ${name}, message: ${message}`)
+  if (type > 3 || templateid != 1) {
+    return
+  }
   if (!sended.has(from)) {
     c.sendGetBossInfo(from)
       .then(info => {
